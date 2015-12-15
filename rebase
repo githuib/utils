@@ -1,0 +1,13 @@
+#!/bin/sh
+
+branch_name=$(git symbolic-ref -q HEAD)
+branch_name=${branch_name##refs/heads/}
+branch_name=${branch_name:-HEAD}
+
+git stash
+git checkout develop
+git pull
+git checkout ${branch_name}
+git rebase develop
+git stash pop
+
