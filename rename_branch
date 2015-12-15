@@ -1,0 +1,8 @@
+#!/bin/sh
+
+OLD_BRANCH=$1
+NEW_BRANCH=$2
+
+git branch -m $OLD_BRANCH $NEW_BRANCH        # Rename branch locally
+git push origin :$OLD_BRANCH                 # Delete the old branch
+git push --set-upstream origin $NEW_BRANCH   # Push the new branch, set local branch to track the new remote
