@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+from __future__ import print_function
+import sys
+import uuid
+
+
+def _create_wf_uuid():
+    parts = str(uuid.uuid4()).lower().split('-')
+    return ''.join(parts)
+
+if __name__ == "__main__":
+    try:
+        num_hits = int(sys.argv[1])
+    except:
+        num_hits = 1
+    for x in range(num_hits):
+        print(_create_wf_uuid())
