@@ -1,0 +1,2 @@
+#!/usr/bin/zsh
+export SSH_AUTH_SOCK=`tmux show-environment | grep "^SSH_AUTH_SOCK" | sed -e "s/^[A-Z_]*=//"`
